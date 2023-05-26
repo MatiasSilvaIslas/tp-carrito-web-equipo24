@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "carritoCompras", "carritoCompras\carritoCompras.csproj", "{332302BB-7E98-46E8-AA76-2375ACAC2527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{42D707EE-D373-45EE-870B-E6B7CCE9D95C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "negocio\negocio.csproj", "{3A90AA27-D1E9-4E38-A858-A88A7881A69C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{332302BB-7E98-46E8-AA76-2375ACAC2527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{332302BB-7E98-46E8-AA76-2375ACAC2527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{332302BB-7E98-46E8-AA76-2375ACAC2527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{332302BB-7E98-46E8-AA76-2375ACAC2527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D707EE-D373-45EE-870B-E6B7CCE9D95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D707EE-D373-45EE-870B-E6B7CCE9D95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D707EE-D373-45EE-870B-E6B7CCE9D95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D707EE-D373-45EE-870B-E6B7CCE9D95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A90AA27-D1E9-4E38-A858-A88A7881A69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A90AA27-D1E9-4E38-A858-A88A7881A69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A90AA27-D1E9-4E38-A858-A88A7881A69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A90AA27-D1E9-4E38-A858-A88A7881A69C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B0D0285-72ED-4ADF-B98E-7E40A0A285EB}
+	EndGlobalSection
+EndGlobal
