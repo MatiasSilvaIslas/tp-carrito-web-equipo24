@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <%-- %><%
+         %><%
             foreach (dominio.Articulo articulo in articulos)
             { %>        
 
@@ -14,13 +14,14 @@
                 <div class="card-body">
                     <h5 class="card-title"><%: articulo.Nombre  %></h5>
                     <p class="card-text"> $<%: articulo.Precio %></p>
-                    <asp:Button Text="text" runat="server" />
+                    <a href="Detalle.aspx?id=<%: articulo.Id %>" >Ver detalle </a>
                 </div>
-            </div>
+            </div> 
         </div>
-         <% } %>--%>
+         <% } %>
 
-        <asp:Repeater ID="repArticulos" runat="server">
+
+       <%-- asp:Repeater ID="repArticulos" runat="server">
             <ItemTemplate>
                 <div class="col">
                     <div class="card">
@@ -29,12 +30,12 @@
                             <div class="card-body">
                                 <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                 <p class="card-text">$<%#Eval("Precio") %></p>
-                                <asp:Button Text="Ver detalle" CssClass="btn btn-info" runat="server" ID="btnDetalle" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" OnClick="btnDetalle_Click"/>
+                                <asp:Button Text="Ver detalle" CssClass="btn btn-info" runat="server" ID="btnDetalle" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" OnClick="btnDetalle_Click" />
                             </div>
                         </div>
                     </div>
                 </div>
             </ItemTemplate>
-        </asp:Repeater>
+        </asp:Repeater> --%>
     </div>
 </asp:Content>

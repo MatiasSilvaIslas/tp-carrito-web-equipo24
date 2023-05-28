@@ -16,16 +16,16 @@ namespace carritoCompras
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             articulos = articuloNegocio.listar();
-            if (!IsPostBack)
+           /* if (!IsPostBack)
             {
                 repArticulos.DataSource = articulos;
                 repArticulos.DataBind();
-            }
+            }*/
         }
-        protected void btnDetalle_Click(object sender, EventArgs e)
+       /* protected void btnDetalle_Click(object sender, EventArgs e)
         {
             string valor = ((Button)sender).CommandArgument;
-        }
+        }*/
 
     }
 }
