@@ -31,7 +31,6 @@
                             <i class="fa fa-shopping-cart"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown">
-                            <!--Hay que ver cómo agregar los productos que se vayan agregando -->
                             <% if (Session["ArticulosCarrito"] != null)
                                 {
                                     List<dominio.Articulo> articulosCarrito = (List<dominio.Articulo>)Session["ArticulosCarrito"];
