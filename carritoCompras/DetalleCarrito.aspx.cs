@@ -13,25 +13,56 @@ namespace carritoCompras
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["ArticulosCarrito"] != null)
+            if (!IsPostBack)
             {
-                decimal total = 0;
-                List<Articulo> articulosCarrito = (List<Articulo>)Session["ArticulosCarrito"];
-                //gvCarrito.DataSource = articulosCarrito;
-                //gvCarrito.DataBind();
-                repArticulos.DataSource = articulosCarrito;
-                repArticulos.DataBind();
-                foreach (Articulo articulo in articulosCarrito)
+                if (Session["ArticulosCarrito"] != null)
                 {
-                    total += articulo.Precio;
+                    List<Articulo> articulosCarrito = (List<Articulo>)Session["ArticulosCarrito"];
+                    repArticulos.DataSource = articulosCarrito;
+                    repArticulos.DataBind();
+                    cargarPrecio();
                 }
-                lblTotal.Text += total.ToString();
             }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            string idArticulo = ((Button)sender).CommandArgument;
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            Articulo articulo = articuloNegocio.listar(Int32.Parse(idArticulo));
+            List<Articulo> articulosCarrito = (List<Articulo>)Session["ArticulosCarrito"];
+            if (articulosCarrito != null)
+            {
+                Articulo articuloEliminar = articulosCarrito.Find(a => a.Id == articulo.Id);
+                if (articuloEliminar != null)
+                {
+                    articulosCarrito.Remove(articuloEliminar);
+                    Session["ArticulosCarrito"] = articulosCarrito;
+                    repArticulos.DataSource = articulosCarrito;
+                    repArticulos.DataBind();
+                    cargarPrecio();
+                }
+            }
         }
+
+        public void cargarPrecio()
+        {
+            decimal total = 0;
+            List<Articulo> articulosCarrito = (List<Articulo>)Session["ArticulosCarrito"];
+            if (articulosCarrito != null)
+            {
+                
+                foreach (Articulo articulo in articulosCarrito)
+                {
+                    total += articulo.Precio;
+                }
+                lblTotal.Text = "Total $" + total.ToString();
+            }
+            else
+            {
+                lblTotal.Text = "Total $" + total.ToString();
+            }
+        }
+
     }
 }

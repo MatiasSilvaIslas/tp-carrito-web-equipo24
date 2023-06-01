@@ -18,9 +18,14 @@ namespace carritoCompras
         {
             if (!IsPostBack)
             {
+                if (Session["ArticulosCarrito"] == null)
+                {
+                    Session["ArticulosCarrito"] = new List<Articulo>();
+                }
                 CargarArticulos();
             }
         }
+
 
         protected void CargarArticulos()
         {

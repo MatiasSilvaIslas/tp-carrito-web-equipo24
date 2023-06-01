@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="DetalleCarrito.aspx.cs" Inherits="carritoCompras.DetalleCarrito" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -24,13 +25,13 @@
                                     <p class="text-start">$<%#Eval("Precio") %></p>
                                 </div>
                                 <div class="col-2">
-                                    <asp:Button runat="server" ID="btnEliminar" CssClass="btn btn-danger" Text="Eliminar" OnClick="btnEliminar_Click" />
+                                    <asp:Button runat="server" ID="btnEliminar" CssClass="btn btn-danger" Text="Eliminar" OnClick="btnEliminar_Click"  CommandArgument='<%#Eval("Id") %>' />
                                 </div>
                             </div>
                         </li>
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:Label ID="lblTotal" runat="server" Text="Total: $" CssClass="col-12 my-3 text-start fs-4 fw-bold"></asp:Label>
+                <asp:Label ID="lblTotal" runat="server" Text="" CssClass="col-12 my-3 text-start fs-4 fw-bold"></asp:Label>
             </div>
         </div>
     </div>
