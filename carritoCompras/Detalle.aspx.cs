@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static System.Net.WebRequestMethods;
 
 namespace carritoCompras
 {
@@ -26,10 +27,18 @@ namespace carritoCompras
             lblMarca.Text = articulo.Marca.Descripcion;
             lblCategoria.Text = articulo.Categoria.Descripcion;
             lblDescripcion.Text = articulo.Descripcion;
-            if (imagenes.Count > 0)
-                imgArticulo.ImageUrl = imagenes[0].ImagenUrl;
-            else
-                imgArticulo.ImageUrl = "https://www.redeszone.net/app/uploads-redeszone.net/2021/09/Error-404-01-e1633683457508.jpg";
+            cargarCarrousel();
+        }
+        public void cargarCarrousel()
+        {
+            if (imagenes.Count == 0)
+            {
+                Imagen aux = new Imagen();
+                aux.ImagenUrl = "https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-10615.jpg?size=626&ext=jpg&ga=GA1.1.70386129.1685633354&semt=location_fest_v1";
+                imagenes.Add(aux);
+            }
+            repImg.DataSource = imagenes;
+            repImg.DataBind();
         }
     }
 }
