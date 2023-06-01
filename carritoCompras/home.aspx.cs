@@ -31,8 +31,6 @@ namespace carritoCompras
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             articulos = articuloNegocio.listar();
-            Session["ArticulosCarrito"] = new List<Articulo>();
-
             repArticulos.DataSource = articulos;
             repArticulos.DataBind();
         }
