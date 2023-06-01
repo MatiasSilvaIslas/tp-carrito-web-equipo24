@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\estilos.css" />
     <Content Include="Detalle.aspx" />
     <Content Include="DetalleCarrito.aspx" />
     <Content Include="Global.asax" />

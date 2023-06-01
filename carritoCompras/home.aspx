@@ -30,7 +30,7 @@
         <asp:Repeater ID="repArticulos" runat="server">
             <ItemTemplate>
                 <div class="col">
-                    <div class="card">
+                    <div class="card sombra">
                         <img src='<%# ((List<dominio.Imagen>)Eval("Imagenes")).Count > 0 ? ((List<dominio.Imagen>)Eval("Imagenes"))[0].ImagenUrl : "https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-10615.jpg?size=626&ext=jpg&ga=GA1.1.70386129.1685633354&semt=location_fest_v1" %>' class="card-img-top" alt="..." />
                         <div class="card-body">
                             <div class="card-body">
