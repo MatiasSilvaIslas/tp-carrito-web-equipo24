@@ -11,7 +11,7 @@
                     <asp:Repeater ID="repImg" runat="server">
                         <ItemTemplate>
                             <div class="carousel-item <%# Container.ItemIndex == 0 ? "active" : "" %>">
-                                <img src='<%# Eval("ImagenUrl") %>' alt="Alternate Text" class="d-block w-100" />
+                                <img src='<%# Eval("ImagenUrl") %>' alt="Alternate Text" class="d-block w-100" onerror="this.src='https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-10615.jpg?size=626&ext=jpg&ga=GA1.1.70386129.1685633354&semt=location_fest_v1'" />
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
