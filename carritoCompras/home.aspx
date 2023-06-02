@@ -3,46 +3,36 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <%--<%
-              foreach (dominio.Articulo articulo in articulos)
-              { %>
-
-        <div class="col">
-            <div class="card">
-                <img src="<%: articulo.Imagenes.Count > 0 ? articulo.Imagenes[0].ImagenUrl : "https://www.redeszone.net/app/uploads-redeszone.net/2021/09/Error-404-01-e1633683457508.jpg" %>" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title"><%: articulo.Nombre  %></h5>
-                    <%string aux = articulo.Id.ToString(); %>
-                    <p class="card-text">$<%: articulo.Precio %></p>
-                    <a href="Detalle.aspx?id=<%: articulo.Id %>">Ver detalle </a>
-                    <div class="input-group mb-3">
-                        <!--Hay que ver como hacer para que agregar en la sesion, una lista de articulos y se multiplique por la cantidad de artículos ingresados
-                            <input type="number" id="cantidad_<%: articulo.Id %>" class="form-control" placeholder="Cantidad" min="1" value="1">
-                        <button class="btn btn-success" onclick="agregarAlCarrito('<%: articulo.Id %>')"> -->
-                        <asp:Button ID="btnAgregar" OnCommand="agregar_Click" runat="server" Text="Agregar" CssClass="btn btn-light" CommandArgument="<# articulo.Id %>" />
-                    </div>
-                </div>
-            </div>
+    <h1>Te damos la bienvenida</h1>
+    <h3>Estos son algunos de nuestros productos mas destacados</h3>
+    <div class="container" id="container-carousel">
+        <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://images.samsung.com/is/image/samsung/co-galaxy-s10-sm-g970-sm-g970fzyjcoo-frontcanaryyellow-thumb-149016542" class="d-block w-100" alt="...">
         </div>
-        <% } %>--%>
+        <div class="carousel-item">
+          <img src="https://i.blogs.es/9da288/moto-g7-/1366_2000.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://www.euronics.cz/image/product/800x800/532620.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
 
-        <asp:Repeater ID="repArticulos" runat="server">
-            <ItemTemplate>
-                <div class="col">
-                    <div class="card sombra">
-                        <img src='<%# ((List<dominio.Imagen>)Eval("Imagenes")).Count > 0 ? ((List<dominio.Imagen>)Eval("Imagenes"))[0].ImagenUrl : "https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-10615.jpg?size=626&ext=jpg&ga=GA1.1.70386129.1685633354&semt=location_fest_v1" %>' class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <div class="card-body">
-                                <h5 class="card-title"><%#Eval("Nombre") %></h5>
-                                <p class="card-text">$<%#Eval("Precio") %></p>
-                                <a href="Detalle.aspx?id=<%#Eval("Id") %>">Ver detalle </a>
-                                <asp:Button ID="btnAgregar" OnClick="agregar_Click" runat="server" Text="Agregar" CssClass="btn btn-light" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+        </div>
+    </div>
+
+    <div class="container mt-4 px-4">
+        <div class="d-grid gap-1">
+            <asp:Button ID="btnProductos" CssClass="btn btn-primary btn-lg btn-block" runat="server" Text="Ir a productos"  OnClick="btnProductos_Click" style="background-color:#372880 !important"/>
+        </div>
     </div>
 </asp:Content>
