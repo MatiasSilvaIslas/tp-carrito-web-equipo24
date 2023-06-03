@@ -30,6 +30,7 @@ namespace carritoCompras
         public void CargarArticulos()
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
             articulos = articuloNegocio.listar();
             repArticulos.DataSource = articulos;
             repArticulos.DataBind();
@@ -46,5 +47,9 @@ namespace carritoCompras
             Session["ArticulosCarrito"] = articulosCarrito; //actualizo la lista en la sesion
         }
 
+        protected void filtro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

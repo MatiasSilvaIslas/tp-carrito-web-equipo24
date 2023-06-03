@@ -31,3 +31,32 @@ body {
 #btnProductos {
     color: #372880 !important;
 }
+
+#btn-volver{
+    margin-top: 20px;
+}
+
+.card-body {
+    padding-inline: auto;
+    text-align: justify;
+}
+
+.lista-detalles {
+    list-style: none;
+    padding: 0;
+}
+
+    .lista-detalles li {
+        margin-bottom: 10px;
+    }
+
+.detalle-titulo {
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+}
+
+.detalle-contenido {
+    display: inline-block;
+    margin-left: 10px;
+}

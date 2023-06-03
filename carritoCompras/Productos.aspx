@@ -3,6 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <h1>Lista de Productos</h1>
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-3">
+                <asp:Label Text="Filtrar" runat="server" />
+                <asp:TextBox runat="server" ID="filtro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" />
+            </div>
+        </div>
+    </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <%--<%
               foreach (dominio.Articulo articulo in articulos)
@@ -31,16 +41,18 @@
             <ItemTemplate>
                 <div class="col">
                     <div class="card sombra">
-                        <img src='<%# ((List<dominio.Imagen>)Eval("Imagenes")).Count > 0 ? ((List<dominio.Imagen>)Eval("Imagenes"))[0].ImagenUrl : "https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-10615.jpg?size=626&ext=jpg&ga=GA1.1.70386129.1685633354&semt=location_fest_v1" %>' class="card-img-top" alt="..." onerror="this.src='https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-10615.jpg?size=626&ext=jpg&ga=GA1.1.70386129.1685633354&semt=location_fest_v1'"/>
+                        <img src='<%# ((List<dominio.Imagen>)Eval("Imagenes")).Count > 0 ? ((List<dominio.Imagen>)Eval("Imagenes"))[0].ImagenUrl : "https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-10615.jpg?size=626&ext=jpg&ga=GA1.1.70386129.1685633354&semt=location_fest_v1" %>' class="card-img-top" alt="..." onerror="this.src='https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-10615.jpg?size=626&ext=jpg&ga=GA1.1.70386129.1685633354&semt=location_fest_v1'" />
                         <div class="card-body">
                             <div class="card-body">
                                 <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                 <p class="card-text">$<%#Eval("Precio") %></p>
-                                <a href="Detalle.aspx?id=<%#Eval("Id") %>">Ver detalle </a>
-                                <asp:Button ID="btnAgregar" OnClick="agregar_Click" runat="server" Text="Agregar" CssClass="btn btn-light" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" />
+                                <a  href="Detalle.aspx?id=<%#Eval("Id") %>"><button type="button" class="btn btn-primary">Ver detalle</button></a>
+                                <asp:Button ID="btnAgregar" OnClick="agregar_Click" runat="server" Text="Agregar" CssClass="btn btn-primary" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" />
+                                
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </ItemTemplate>
         </asp:Repeater>

@@ -34,6 +34,7 @@
                 <asp:Label ID="lblTotal" runat="server" Text="" CssClass="col-12 my-3 text-start fs-4 fw-bold"></asp:Label>
             </div>
         </div>
+           <a  href="Productos.aspx?id=<%#Eval("Id") %>"><button type="button" class="btn btn-primary" id="btn-volver">Volver</button></a>
     </div>
 </asp:Content>
 

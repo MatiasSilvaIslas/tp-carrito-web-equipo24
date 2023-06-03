@@ -29,13 +29,30 @@
         <div class="col-md-6">
 
             <div class="card-body">
-                <asp:Label Text="Nombre: " ID="lblNombre" runat="server" CssClass="d-block" />
-                <asp:Label Text="$" ID="lblPrecio" runat="server" CssClass="d-block" />
-                <asp:Label Text="" ID="lblMarca" runat="server" CssClass="d-block" />
-                <asp:Label Text="" ID="lblCategoria" runat="server" CssClass="d-block" />
-                <asp:Label Text="" ID="lblDescripcion" runat="server" CssClass="d-block" />
-            </div>
+            <ul class="lista-detalles">
+    <li>
+        <span class="detalle-titulo">Nombre:</span>
+        <asp:Label Text="Nombre" ID="lblNombre" runat="server" CssClass="detalle-contenido" />
+    </li>
+    <li>
+        <span class="detalle-titulo">Precio:</span>
+        <asp:Label Text="$" ID="lblPrecio" runat="server" CssClass="detalle-contenido" />
+    </li>
+    <li>
+        <span class="detalle-titulo">Marca:</span>
+        <asp:Label Text="Marca" ID="lblMarca" runat="server" CssClass="detalle-contenido" />
+    </li>
+    <li>
+        <span class="detalle-titulo">Categoría:</span>
+        <asp:Label Text="Categoría" ID="lblCategoria" runat="server" CssClass="detalle-contenido" />
+    </li>
+    <li>
+        <span class="detalle-titulo">Descripción:</span>
+        <asp:Label Text="Descripción" ID="lblDescripcion" runat="server" CssClass="detalle-contenido" />
+    </li>
+</ul>
 
+            <a  href="Productos.aspx?id=<%#Eval("Id") %>"><button type="button" class="btn btn-primary" id="btn-volver">Volver</button></a>
         </div>
     </div>
 
