@@ -31,8 +31,8 @@ namespace carritoCompras
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
-            articulos = articuloNegocio.listar();
-            repArticulos.DataSource = articulos;
+            Session.Add("ArticulosCarrito", articuloNegocio.listar());
+            repArticulos.DataSource = Session["ArticulosCarrito"];
             repArticulos.DataBind();
         }
 
@@ -49,7 +49,10 @@ namespace carritoCompras
 
         protected void filtro_TextChanged(object sender, EventArgs e)
         {
-
+            articulos = (List<Articulo>)Session["ArticulosCarrito"];
+            List<Articulo> articulosFiltrados = articulos.FindAll(x => x.Nombre.ToLower().Contains(filtro.Text.ToLower()));
+            repArticulos.DataSource = articulosFiltrados;
+            repArticulos.DataBind();
         }
     }
 }
