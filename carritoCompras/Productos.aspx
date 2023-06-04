@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <%if (FiltroAvanzado)
+    <%if (CheckBoxAvanzado.Checked)
         { %>
     <div class="row">
         <div class="col-3">
@@ -37,20 +37,29 @@
         <div class="col-3">
             <div class="mb-3">
                 <asp:Label Text="Filtro" runat="server" />
-                <asp:DropDownList runat="server" ID="txtFiltroAvanzado" CssClass="form-control">
+                <asp:TextBox runat="server" ID="txtFiltroAvanzado" CssClass="form-control">
 
-                </asp:DropDownList>
+                </asp:TextBox>
             </div>
     </div>
         <div class="col-3">
             <div class="mb-3">
                 <asp:Label Text="Estado" runat="server" />
                 <asp:DropDownList runat="server" ID="ddlEstado" CssClass="form-control">
-
+                    <asp:ListItem Text="Activo" />
+                    <asp:ListItem Text="Inactivo" />
                 </asp:DropDownList>
             </div>
              </div>
         </div>
+      <div class="row">
+          <div class="col-3">
+              <div class="mb-3">
+                  <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary" id="btnBuscar" OnClick="btnBuscar_Click" />
+              </div>
+          </div>
+
+                </div>
     <%} %>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <%--<%

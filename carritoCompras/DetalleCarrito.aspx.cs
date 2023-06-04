@@ -11,14 +11,15 @@ namespace carritoCompras
 {
     public partial class DetalleCarrito : System.Web.UI.Page
     {
+        public List<Articulo> Articulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 if (Session["ArticulosCarrito"] != null)
                 {
-                    List<Articulo> articulosCarrito = (List<Articulo>)Session["ArticulosCarrito"];
-                    repArticulos.DataSource = articulosCarrito;
+                  Articulos = (List<Articulo>)Session["ArticulosCarrito"];
+                    repArticulos.DataSource = Articulos;
                     repArticulos.DataBind();
                     cargarPrecio();
                 }
@@ -30,15 +31,15 @@ namespace carritoCompras
             string idArticulo = ((Button)sender).CommandArgument;
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             Articulo articulo = articuloNegocio.listar(Int32.Parse(idArticulo));
-            List<Articulo> articulosCarrito = (List<Articulo>)Session["ArticulosCarrito"];
-            if (articulosCarrito != null)
+            Articulos = (List<Articulo>)Session["ArticulosCarrito"];
+            if (Articulos != null)
             {
-                Articulo articuloEliminar = articulosCarrito.Find(a => a.Id == articulo.Id);
+                Articulo articuloEliminar = Articulos.Find(a => a.Id == articulo.Id);
                 if (articuloEliminar != null)
                 {
-                    articulosCarrito.Remove(articuloEliminar);
-                    Session["ArticulosCarrito"] = articulosCarrito;
-                    repArticulos.DataSource = articulosCarrito;
+                    Articulos.Remove(articuloEliminar);
+                    Session["ArticulosCarrito"] = Articulos;
+                    repArticulos.DataSource = Articulos;
                     repArticulos.DataBind();
                     cargarPrecio();
                 }
@@ -48,11 +49,11 @@ namespace carritoCompras
         public void cargarPrecio()
         {
             decimal total = 0;
-            List<Articulo> articulosCarrito = (List<Articulo>)Session["ArticulosCarrito"];
-            if (articulosCarrito != null)
+            Articulos = (List<Articulo>)Session["ArticulosCarrito"];
+            if (Articulos != null)
             {
                 
-                foreach (Articulo articulo in articulosCarrito)
+                foreach (Articulo articulo in Articulos)
                 {
                     total += articulo.Precio;
                 }

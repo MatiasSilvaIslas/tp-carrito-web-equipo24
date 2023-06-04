@@ -37,6 +37,12 @@
             </div>
         </div>
            <a  href="Productos.aspx?id=<%#Eval("Id") %>"><button type="button" class="btn btn-primary" id="btn-volver">Volver</button></a>
+          
+        
+        <%if (Articulos !=null && Articulos.Count>0)
+            { %>
+        <a  href="https://www.mercadopago.com.ar"><button type="button" class="btn btn-success" id="btn-pagar">Pagar</button></a>
+        <%} %>
     </div>
 </asp:Content>
 

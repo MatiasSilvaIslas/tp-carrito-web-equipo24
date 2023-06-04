@@ -17,6 +17,7 @@ namespace carritoCompras
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            FiltroAvanzado = CheckBoxAvanzado.Checked;
             if (!IsPostBack)
             {
                 if (Session["ArticulosCarrito"] == null)
@@ -64,7 +65,36 @@ namespace carritoCompras
 
         protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ddlCriterio.Items.Clear();
+            if(ddlCampo.SelectedItem.ToString()=="Número")
+            {
+                ddlCriterio.Items.Add("Igual a");
+                ddlCriterio.Items.Add("Mayor a");
+                ddlCriterio.Items.Add("Menor a");
+            }
+            else
+            {
+                ddlCriterio.Items.Add("Contiene");
+                ddlCriterio.Items.Add("Comienza con");
+                ddlCriterio.Items.Add("Termina con");
+            }
 
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ArticuloNegocio negocio= new ArticuloNegocio();
+                repArticulos.DataSource=negocio.filtrar(ddlCampo.SelectedItem.ToString(),ddlCriterio.SelectedItem.ToString(),txtFiltroAvanzado.Text,ddlEstado.SelectedItem.ToString());
+                repArticulos.DataBind();
+
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex);
+                throw;
+            }
         }
     }
 }
