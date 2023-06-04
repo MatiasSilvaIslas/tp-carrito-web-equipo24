@@ -7,12 +7,51 @@
     <h1>Lista de Productos</h1>
     <div class="row">
         <div class="col-6">
-            <div class="mb-3">
                 <asp:Label Text="Filtrar" runat="server" />
+            <div class="mb-3" style="display:flex">
                 <asp:TextBox runat="server" ID="filtro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" />
+                <asp:CheckBox ID="CheckBoxAvanzado" runat="server" OnCheckedChanged="CheckBoxAvanzado_CheckedChanged" Text="Filtro Avanzado" AutoPostBack="True" />
             </div>
         </div>
     </div>
+
+    <%if (FiltroAvanzado)
+        { %>
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-3">
+                <asp:Label Text="Campo" ID="lblCampo" runat="server" />
+                <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control" ID="ddlCampo" OnSelectedIndexChanged="ddlCampo_SelectedIndexChanged">
+                    <asp:ListItem Text="Nombre" />
+                    <asp:ListItem Text="Tipo" />
+                    <asp:ListItem Text="Número" />
+                </asp:DropDownList>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <asp:Label Text="Criterio" runat="server" />
+                <asp:DropDownList runat="server" ID="ddlCriterio" CssClass="form-control"></asp:DropDownList>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <asp:Label Text="Filtro" runat="server" />
+                <asp:DropDownList runat="server" ID="txtFiltroAvanzado" CssClass="form-control">
+
+                </asp:DropDownList>
+            </div>
+    </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <asp:Label Text="Estado" runat="server" />
+                <asp:DropDownList runat="server" ID="ddlEstado" CssClass="form-control">
+
+                </asp:DropDownList>
+            </div>
+             </div>
+        </div>
+    <%} %>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <%--<%
               foreach (dominio.Articulo articulo in articulos)

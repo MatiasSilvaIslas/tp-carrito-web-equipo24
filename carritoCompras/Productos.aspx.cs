@@ -11,6 +11,7 @@ namespace carritoCompras
 {
     public partial class Productos : System.Web.UI.Page
     {
+        public bool FiltroAvanzado { get; set; }
         public List<Articulo> articulos { get; set; }
         public List<Articulo> articulosCarrito { get; set; }
 
@@ -53,6 +54,17 @@ namespace carritoCompras
             List<Articulo> articulosFiltrados = articulos.FindAll(x => x.Nombre.ToLower().Contains(filtro.Text.ToLower()));
             repArticulos.DataSource = articulosFiltrados;
             repArticulos.DataBind();
+        }
+
+        protected void CheckBoxAvanzado_CheckedChanged(object sender, EventArgs e)
+        {
+            FiltroAvanzado=CheckBoxAvanzado.Checked;
+            CheckBoxAvanzado.Enabled = !FiltroAvanzado;
+        }
+
+        protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
