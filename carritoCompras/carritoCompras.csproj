@@ -70,6 +70,8 @@
     <Content Include="CSS\estilos.css" />
     <Content Include="Detalle.aspx" />
     <Content Include="DetalleCarrito.aspx" />
+    <Content Include="Contacto.aspx" />
+    <Content Include="Nosotros.aspx" />
     <Content Include="Productos.aspx" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
@@ -89,6 +91,20 @@
     </Compile>
     <Compile Include="DetalleCarrito.aspx.designer.cs">
       <DependentUpon>DetalleCarrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nosotros.aspx.cs">
+      <DependentUpon>Nosotros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nosotros.aspx.designer.cs">
+      <DependentUpon>Nosotros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Productos.aspx.cs">
       <DependentUpon>Productos.aspx</DependentUpon>

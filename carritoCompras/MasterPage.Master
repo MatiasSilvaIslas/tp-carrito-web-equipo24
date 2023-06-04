@@ -32,9 +32,9 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 nav-item mb-lg-0">
                     <li class="nav-link" href="../home.aspx"> <a class="list-group-item list-group-item-action" href="home.aspx">Inicio</a></li>
-                    <li class="nav-link" href="../home.aspx"> <a class="list-group-item list-group-item-action" href="#">Nosotros</a></li>
+                    <li class="nav-link" href="../home.aspx"> <a class="list-group-item list-group-item-action" href="Nosotros.aspx">Nosotros</a></li>
                     <li class="nav-link" href="../home.aspx"> <a class="list-group-item list-group-item-action" href="Productos.aspx">Productos</a></li>
-                    <li class="nav-link" href="../home.aspx"> <a class="list-group-item list-group-item-action" href="#">Contacto</a></li>
+                    <li class="nav-link" href="../home.aspx"> <a class="list-group-item list-group-item-action" href="Contacto.aspx">Contacto</a></li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
