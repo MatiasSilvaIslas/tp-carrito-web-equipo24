@@ -18,7 +18,7 @@ namespace carritoCompras
             {
                 if (Session["ArticulosCarrito"] != null)
                 {
-                  Articulos = (List<Articulo>)Session["ArticulosCarrito"];
+                    Articulos = (List<Articulo>)Session["ArticulosCarrito"];
                     repArticulos.DataSource = Articulos;
                     repArticulos.DataBind();
                     cargarPrecio();
@@ -52,7 +52,7 @@ namespace carritoCompras
             Articulos = (List<Articulo>)Session["ArticulosCarrito"];
             if (Articulos != null)
             {
-                
+
                 foreach (Articulo articulo in Articulos)
                 {
                     total += articulo.Precio;
