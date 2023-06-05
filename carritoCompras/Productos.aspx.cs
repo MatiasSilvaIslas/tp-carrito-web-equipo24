@@ -25,6 +25,9 @@ namespace carritoCompras
                     Session["ArticulosCarrito"] = new List<Articulo>();
                 }
                 CargarArticulos();
+                ddlCriterio.Items.Add("Contiene");
+                ddlCriterio.Items.Add("Comienza con");
+                ddlCriterio.Items.Add("Termina con");
             }
         }
 
@@ -60,7 +63,7 @@ namespace carritoCompras
         protected void CheckBoxAvanzado_CheckedChanged(object sender, EventArgs e)
         {
             FiltroAvanzado=CheckBoxAvanzado.Checked;
-            CheckBoxAvanzado.Enabled = !FiltroAvanzado;
+            //CheckBoxAvanzado.Enabled = !FiltroAvanzado;
         }
 
         protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,7 +89,7 @@ namespace carritoCompras
             try
             {
                 ArticuloNegocio negocio= new ArticuloNegocio();
-                repArticulos.DataSource=negocio.filtrar(ddlCampo.SelectedItem.ToString(),ddlCriterio.SelectedItem.ToString(),txtFiltroAvanzado.Text,ddlEstado.SelectedItem.ToString());
+                repArticulos.DataSource=negocio.filtrar(ddlCampo.SelectedItem.ToString(),ddlCriterio.SelectedItem.ToString(),txtFiltroAvanzado.Text);
                 repArticulos.DataBind();
 
             }

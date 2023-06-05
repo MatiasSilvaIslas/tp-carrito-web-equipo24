@@ -214,7 +214,7 @@ namespace negocio
             }
         }
 
-        public List<Articulo> filtrar(string campo, string criterio, string filtro, string Estado)
+        public List<Articulo> filtrar(string campo, string criterio, string filtro)
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();

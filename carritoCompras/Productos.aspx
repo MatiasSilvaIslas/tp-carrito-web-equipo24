@@ -5,15 +5,32 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <h1>Lista de Productos</h1>
-    <div class="row">
+    <%--<div class="row">
         <div class="col-6">
                 <asp:Label Text="Filtrar" runat="server" />
-            <div class="mb-3" style="display:flex">
+            <div class="mb-3" style="display:flex; align-items:center; align-content:space-evenly">
                 <asp:TextBox runat="server" ID="filtro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" />
-                <asp:CheckBox ID="CheckBoxAvanzado" runat="server" OnCheckedChanged="CheckBoxAvanzado_CheckedChanged" Text="Filtro Avanzado" AutoPostBack="True" />
+                <div>
+                    <asp:CheckBox ID="CheckBoxAvanzado" runat="server" OnCheckedChanged="CheckBoxAvanzado_CheckedChanged" Text="Filtro Avanzado" AutoPostBack="True" style="margin-left:1rem"/>
+                </div>
+            </div>
+        </div>
+    </div>--%>
+    <div class="row">
+        <div class="col-6">
+            <asp:Label Text="Filtrar" runat="server" />
+            <div class="mb-3" style="display: flex; align-items: center; align-content: space-evenly">
+                <asp:TextBox runat="server" ID="filtro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" />
+                <div style="display: flex; align-items: center; margin-left: 1rem;">
+                    <asp:CheckBox ID="CheckBoxAvanzado" runat="server" OnCheckedChanged="CheckBoxAvanzado_CheckedChanged" AutoPostBack="True" Style="margin-left: 0.5rem;" />
+                    <asp:Label ID="lblAvanzado" runat="server" Text="Filtro Avanzado" Style="margin-bottom: 0; margin-left: 0.5rem; white-space: nowrap;"></asp:Label>
+                </div>
             </div>
         </div>
     </div>
+
+
+
 
     <%if (CheckBoxAvanzado.Checked)
         { %>
@@ -41,25 +58,16 @@
 
                 </asp:TextBox>
             </div>
+        </div>
     </div>
+    <div class="row">
         <div class="col-3">
             <div class="mb-3">
-                <asp:Label Text="Estado" runat="server" />
-                <asp:DropDownList runat="server" ID="ddlEstado" CssClass="form-control">
-                    <asp:ListItem Text="Activo" />
-                    <asp:ListItem Text="Inactivo" />
-                </asp:DropDownList>
+                <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary" ID="btnBuscar" OnClick="btnBuscar_Click" />
             </div>
-             </div>
         </div>
-      <div class="row">
-          <div class="col-3">
-              <div class="mb-3">
-                  <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary" id="btnBuscar" OnClick="btnBuscar_Click" />
-              </div>
-          </div>
 
-                </div>
+    </div>
     <%} %>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <%--<%
@@ -94,13 +102,14 @@
                             <div class="card-body">
                                 <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                 <p class="card-text">$<%#Eval("Precio") %></p>
-                                <a  href="Detalle.aspx?id=<%#Eval("Id") %>"><button type="button" class="btn btn-primary">Ver detalle</button></a>
+                                <a href="Detalle.aspx?id=<%#Eval("Id") %>">
+                                    <button type="button" class="btn btn-primary">Ver detalle</button></a>
                                 <asp:Button ID="btnAgregar" OnClick="agregar_Click" runat="server" Text="Agregar" CssClass="btn btn-primary" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" />
-                                
+
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </ItemTemplate>
         </asp:Repeater>
