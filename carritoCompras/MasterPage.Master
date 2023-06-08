@@ -17,7 +17,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link href="../CSS/estilos.css" rel="stylesheet" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@100&display=swap%27);
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@100&display=swap%27');
+        .fotos-card {
+    max-height: 407.5px;
+    object-fit: cover;
+    border-radius: 25rem !important;
+}
+        .h-100{
+            background-color:#7d6ac1;
+        }
+        .h-100 > .card-body {
+            background-color:#d4c4ff;
+        }
     </style>
 
 </head>
